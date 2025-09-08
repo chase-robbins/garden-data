@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello from Express server!' });
 });
 
+app.get('/api', (req, res) => {
+  res.json({ message: 'Hello from Express server!' });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });

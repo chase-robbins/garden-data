@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { useAuth } from './AuthContext'
+import Header from './components/Header'
 import Login from './Login'
-import GardenSelector from './components/GardenSelector'
+import GardenCanvas from './components/GardenCanvas'
 
 function App() {
   const [serverMessage, setServerMessage] = useState('')
@@ -26,30 +27,89 @@ function App() {
 
   if (!user) {
     return (
-      <div className="App">
-        <h1>Garden Data Frontend</h1>
-        <Login />
+      <div style={{ 
+        minHeight: '100vh',
+        width: '100vw',
+        backgroundColor: '#f7fafc',
+        display: 'flex',
+        flexDirection: 'column'
+      }}>
+        <Header selectedGarden={null} onGardenChange={() => {}} />
+        <div style={{ 
+          flex: 1,
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          padding: '2rem'
+        }}>
+          <div style={{
+            backgroundColor: 'white',
+            padding: '3rem',
+            borderRadius: '12px',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            textAlign: 'center',
+            maxWidth: '400px',
+            width: '100%'
+          }}>
+            <h2 style={{ 
+              marginBottom: '1.5rem', 
+              color: '#2d3748',
+              fontSize: '1.75rem'
+            }}>
+              Welcome to Garden Data
+            </h2>
+            <Login />
+          </div>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="App">
-      <h1>Garden Data Frontend</h1>
-      <Login />
-      <div style={{ marginTop: '2rem' }}>
-        <p>Server says: {serverMessage}</p>
-        {health && (
-          <div>
-            <p>Server status: {health.status}</p>
-            <p>Last check: {new Date(health.timestamp).toLocaleString()}</p>
-          </div>
-        )}
-      </div>
-      <GardenSelector 
+    <div style={{ 
+      minHeight: '100vh',
+      width: '100vw',
+      backgroundColor: '#f7fafc',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <Header 
         selectedGarden={selectedGarden} 
         onGardenChange={setSelectedGarden} 
       />
+      
+      <main style={{ 
+        flex: 1,
+        padding: '2rem',
+        maxWidth: '1200px',
+        width: '100%',
+        margin: '0 auto'
+      }}>
+        {selectedGarden ? (
+          <GardenCanvas garden={selectedGarden} />
+        
+        ) : (
+          <div style={{
+            backgroundColor: 'white',
+            padding: '3rem',
+            borderRadius: '12px',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            textAlign: 'center'
+          }}>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌱</div>
+            <h2 style={{ 
+              margin: '0 0 1rem 0', 
+              color: '#2d3748',
+              fontSize: '1.5rem'
+            }}>
+              Select a Garden
+            </h2>
+            <p style={{ color: '#718096', margin: 0 }}>
+              Choose a garden from the dropdown above or create a new one to get started.
+            </p>
+          </div>
+        )}
+      </main>
     </div>
   )
 }
