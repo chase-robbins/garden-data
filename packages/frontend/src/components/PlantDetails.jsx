@@ -202,7 +202,7 @@ const PlantDetails = ({
     }}>
       {/* Left Panel - Plant Details */}
       <div style={{
-        width: '40%',
+        width: '25%',
         background: 'linear-gradient(135deg, #6b7c50 0%, #8b9c60 100%)', // Earthy green gradient
         padding: '48px',
         display: 'flex',
@@ -889,43 +889,87 @@ const PlantDetails = ({
                   ))}
                 </div>
                 
-                {/* Custom Date/Time Input */}
-                <div style={{ marginTop: '16px' }}>
-                  <label style={{
-                    display: 'block',
-                    fontSize: '14px',
-                    fontWeight: '400',
-                    color: '#5d4e37',
-                    marginBottom: '4px'
-                  }}>
-                    Date & Time (optional - defaults to now)
-                  </label>
-                  <input
-                    type="datetime-local"
-                    value={customDateTime}
-                    onChange={(e) => setCustomDateTime(e.target.value)}
-                    style={{
-                      width: '100%',
-                      padding: '12px 16px',
-                      border: '2px solid #e5ddd0',
-                      borderRadius: '8px',
+                {/* Custom Date/Time Inputs */}
+                <div style={{ 
+                  marginTop: '16px',
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '16px'
+                }}>
+                  <div>
+                    <label style={{
+                      display: 'block',
                       fontSize: '14px',
-                      backgroundColor: '#ffffff',
+                      fontWeight: '400',
                       color: '#5d4e37',
-                      outline: 'none',
-                      fontFamily: 'inherit',
-                      boxSizing: 'border-box',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = '#8b7355';
-                      e.target.style.boxShadow = '0 0 0 4px rgba(139, 115, 85, 0.1)';
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = '#e5ddd0';
-                      e.target.style.boxShadow = 'none';
-                    }}
-                  />
+                      marginBottom: '4px'
+                    }}>
+                      Date
+                    </label>
+                    <input
+                      type="date"
+                      value={customDate}
+                      onChange={(e) => setCustomDate(e.target.value)}
+                      style={{
+                        width: '100%',
+                        padding: '12px 16px',
+                        border: '2px solid #e5ddd0',
+                        borderRadius: '8px',
+                        fontSize: '14px',
+                        backgroundColor: '#ffffff',
+                        color: '#5d4e37',
+                        outline: 'none',
+                        fontFamily: 'inherit',
+                        boxSizing: 'border-box',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = '#8b7355';
+                        e.target.style.boxShadow = '0 0 0 4px rgba(139, 115, 85, 0.1)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = '#e5ddd0';
+                        e.target.style.boxShadow = 'none';
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      fontSize: '14px',
+                      fontWeight: '400',
+                      color: '#5d4e37',
+                      marginBottom: '4px'
+                    }}>
+                      Time
+                    </label>
+                    <input
+                      type="time"
+                      value={customTime}
+                      onChange={(e) => setCustomTime(e.target.value)}
+                      style={{
+                        width: '100%',
+                        padding: '12px 16px',
+                        border: '2px solid #e5ddd0',
+                        borderRadius: '8px',
+                        fontSize: '14px',
+                        backgroundColor: '#ffffff',
+                        color: '#5d4e37',
+                        outline: 'none',
+                        fontFamily: 'inherit',
+                        boxSizing: 'border-box',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = '#8b7355';
+                        e.target.style.boxShadow = '0 0 0 4px rgba(139, 115, 85, 0.1)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = '#e5ddd0';
+                        e.target.style.boxShadow = 'none';
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
