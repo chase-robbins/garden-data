@@ -37,8 +37,8 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
     setShowAddForm(false);
   };
 
-  if (loading) return <div style={{ color: headerMode ? '#a0aec0' : 'inherit', fontSize: '14px' }}>Loading gardens...</div>;
-  if (error) return <div style={{ color: headerMode ? '#fed7d7' : 'red', fontSize: '14px' }}>Error loading gardens</div>;
+  if (loading) return <div style={{ color: headerMode ? 'rgba(248, 245, 240, 0.7)' : '#8b7355', fontSize: '14px', fontStyle: 'italic', fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif' }}>Loading gardens...</div>;
+  if (error) return <div style={{ color: headerMode ? '#fef2f2' : '#dc2626', fontSize: '14px', fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif' }}>Error loading gardens</div>;
 
   if (headerMode) {
     return (
@@ -52,17 +52,19 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
           style={{
             padding: '0.5rem 0.75rem',
             fontSize: '14px',
-            border: '1px solid #4a5568',
-            borderRadius: '6px',
-            backgroundColor: '#4a5568',
-            color: 'white',
+            border: '1px solid rgba(248, 245, 240, 0.3)',
+            borderRadius: '8px',
+            backgroundColor: 'rgba(248, 245, 240, 0.1)',
+            color: '#f8f5f0',
             minWidth: '160px',
-            outline: 'none'
+            outline: 'none',
+            fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
+            backdropFilter: 'blur(10px)'
           }}
         >
-          <option value="" style={{ backgroundColor: '#2d3748' }}>Select garden...</option>
+          <option value="" style={{ backgroundColor: '#8b7355', color: '#f8f5f0' }}>Select garden...</option>
           {gardens.map((garden) => (
-            <option key={garden.id} value={garden.id} style={{ backgroundColor: '#2d3748' }}>
+            <option key={garden.id} value={garden.id} style={{ backgroundColor: '#8b7355', color: '#f8f5f0' }}>
               {garden.name}
             </option>
           ))}
@@ -73,18 +75,21 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
           disabled={showAddForm}
           style={{
             padding: '0.5rem',
-            backgroundColor: '#68d391',
-            color: '#1a202c',
+            backgroundColor: 'rgba(248, 245, 240, 0.2)',
+            color: '#f8f5f0',
             border: 'none',
-            borderRadius: '6px',
+            borderRadius: '8px',
             cursor: 'pointer',
             fontSize: '16px',
-            fontWeight: 'bold',
+            fontWeight: '400',
             width: '32px',
             height: '32px',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
+            transition: 'all 0.2s ease',
+            backdropFilter: 'blur(10px)'
           }}
           title="Add new garden"
         >
@@ -110,17 +115,18 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
               top: '100%',
               left: 0,
               marginTop: '0.5rem',
-              backgroundColor: 'white',
-              border: '1px solid #e2e8f0',
-              borderRadius: '6px',
-              boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e5ddd0',
+              borderRadius: '12px',
+              boxShadow: '0 12px 32px rgba(0,0,0,0.15)',
+              fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
               padding: '1rem',
               minWidth: '280px',
               zIndex: 1000
             }}>
               <form onSubmit={handleAddGarden}>
                 <div style={{ marginBottom: '0.75rem' }}>
-                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#2d3748', marginBottom: '0.5rem' }}>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: '400', color: '#5d4e37', marginBottom: '0.5rem' }}>
                     Garden Name
                   </label>
                   <input
@@ -133,8 +139,9 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
                       width: '100%',
                       padding: '0.5rem',
                       fontSize: '14px',
-                      border: '1px solid #e2e8f0',
-                      borderRadius: '4px',
+                      border: '1px solid #e5ddd0',
+                      borderRadius: '8px',
+                      fontFamily: 'inherit',
                       outline: 'none',
                       boxSizing: 'border-box'
                     }}
@@ -148,10 +155,11 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
                     disabled={isAdding}
                     style={{
                       padding: '0.5rem 1rem',
-                      backgroundColor: '#e2e8f0',
-                      color: '#4a5568',
+                      backgroundColor: '#e5ddd0',
+                      color: '#8b7355',
+                      fontFamily: 'inherit',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       cursor: 'pointer',
                       fontSize: '14px'
                     }}
@@ -163,10 +171,11 @@ const GardenSelector = ({ selectedGarden, onGardenChange, headerMode = false }) 
                     disabled={!newGardenName.trim() || isAdding}
                     style={{
                       padding: '0.5rem 1rem',
-                      backgroundColor: '#68d391',
-                      color: '#1a202c',
+                      backgroundColor: '#8b7355',
+                      color: '#f8f5f0',
+                      fontFamily: 'inherit',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       cursor: 'pointer',
                       fontSize: '14px',
                       fontWeight: '500'

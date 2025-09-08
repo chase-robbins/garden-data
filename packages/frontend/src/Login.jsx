@@ -38,8 +38,8 @@ const Login = () => {
               }} 
             />
           )}
-          <h3>Welcome, {user.displayName}!</h3>
-          <p>{user.email}</p>
+          <h3 style={{ color: '#5d4e37', fontWeight: '400' }}>Welcome, {user.displayName}!</h3>
+          <p style={{ color: '#8b7355', fontStyle: 'italic' }}>{user.email}</p>
         </div>
         <button 
           onClick={handleSignOut}
@@ -48,8 +48,10 @@ const Login = () => {
             backgroundColor: '#dc3545',
             color: 'white',
             border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
+            transition: 'all 0.2s ease'
           }}
         >
           Sign Out
@@ -59,22 +61,25 @@ const Login = () => {
   }
 
   return (
-    <div style={{ textAlign: 'center', padding: '2rem' }}>
-      <h2>Please sign in to continue</h2>
+    <div style={{ textAlign: 'center', padding: '2rem', fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif' }}>
+      <h2 style={{ color: '#5d4e37', fontWeight: '400' }}>Please sign in to continue</h2>
       <button 
         onClick={signInWithGoogle}
         style={{
           padding: '0.75rem 1.5rem',
-          backgroundColor: '#4285f4',
+          backgroundColor: '#8b7355',
           color: 'white',
           border: 'none',
-          borderRadius: '4px',
+          borderRadius: '8px',
           cursor: 'pointer',
           fontSize: '16px',
           display: 'flex',
           alignItems: 'center',
           margin: '0 auto',
-          gap: '0.5rem'
+          gap: '0.5rem',
+          fontFamily: 'inherit',
+          transition: 'all 0.2s ease',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
         }}
       >
         <svg width="18" height="18" viewBox="0 0 18 18">

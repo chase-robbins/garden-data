@@ -30,7 +30,8 @@ function App() {
       <div style={{ 
         minHeight: '100vh',
         width: '100vw',
-        backgroundColor: '#f7fafc',
+        backgroundColor: '#f7f4f0',
+        fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
         display: 'flex',
         flexDirection: 'column'
       }}>
@@ -43,18 +44,20 @@ function App() {
           padding: '2rem'
         }}>
           <div style={{
-            backgroundColor: 'white',
+            backgroundColor: '#ffffff',
             padding: '3rem',
-            borderRadius: '12px',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            borderRadius: '16px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
             textAlign: 'center',
             maxWidth: '400px',
-            width: '100%'
+            width: '100%',
+            border: '1px solid #e5ddd0'
           }}>
             <h2 style={{ 
               marginBottom: '1.5rem', 
-              color: '#2d3748',
-              fontSize: '1.75rem'
+              color: '#5d4e37',
+              fontSize: '1.75rem',
+              fontWeight: '400'
             }}>
               Welcome to Garden Data
             </h2>
@@ -69,7 +72,8 @@ function App() {
     <div style={{ 
       minHeight: '100vh',
       width: '100vw',
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#f7f4f0',
+      fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
       display: 'flex',
       flexDirection: 'column'
     }}>
@@ -90,21 +94,23 @@ function App() {
         
         ) : (
           <div style={{
-            backgroundColor: 'white',
+            backgroundColor: '#ffffff',
             padding: '3rem',
-            borderRadius: '12px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            textAlign: 'center'
+            borderRadius: '16px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
+            textAlign: 'center',
+            border: '1px solid #e5ddd0'
           }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌱</div>
             <h2 style={{ 
               margin: '0 0 1rem 0', 
-              color: '#2d3748',
-              fontSize: '1.5rem'
+              color: '#5d4e37',
+              fontSize: '1.5rem',
+              fontWeight: '400'
             }}>
               Select a Garden
             </h2>
-            <p style={{ color: '#718096', margin: 0 }}>
+            <p style={{ color: '#8b7355', margin: 0, fontStyle: 'italic' }}>
               Choose a garden from the dropdown above or create a new one to get started.
             </p>
           </div>

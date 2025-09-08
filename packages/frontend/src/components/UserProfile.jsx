@@ -31,16 +31,19 @@ const UserProfile = () => {
         onClick={signInWithGoogle}
         style={{
           padding: '0.5rem 1rem',
-          backgroundColor: '#4285f4',
-          color: 'white',
+          backgroundColor: 'rgba(248, 245, 240, 0.2)',
+          color: '#f8f5f0',
           border: 'none',
-          borderRadius: '6px',
+          borderRadius: '8px',
           cursor: 'pointer',
           fontSize: '14px',
           display: 'flex',
           alignItems: 'center',
           gap: '0.5rem',
-          fontWeight: '500'
+          fontWeight: '400',
+          fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
+          transition: 'all 0.2s ease',
+          backdropFilter: 'blur(10px)'
         }}
       >
         <svg width="16" height="16" viewBox="0 0 18 18">
@@ -77,15 +80,15 @@ const UserProfile = () => {
               width: '32px', 
               height: '32px', 
               borderRadius: '50%',
-              border: '2px solid #68d391'
+              border: '2px solid rgba(248, 245, 240, 0.4)'
             }} 
           />
         )}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <span style={{ fontSize: '14px', fontWeight: '500', lineHeight: '1.2' }}>
+          <span style={{ fontSize: '14px', fontWeight: '400', lineHeight: '1.2', fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif' }}>
             {user.displayName}
           </span>
-          <span style={{ fontSize: '12px', color: '#a0aec0', lineHeight: '1.2' }}>
+          <span style={{ fontSize: '12px', color: 'rgba(248, 245, 240, 0.7)', lineHeight: '1.2', fontStyle: 'italic', fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif' }}>
             {user.email}
           </span>
         </div>
@@ -120,21 +123,22 @@ const UserProfile = () => {
             top: '100%',
             right: 0,
             marginTop: '0.5rem',
-            backgroundColor: 'white',
-            border: '1px solid #e2e8f0',
-            borderRadius: '6px',
-            boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+            backgroundColor: '#ffffff',
+            border: '1px solid #e5ddd0',
+            borderRadius: '12px',
+            boxShadow: '0 12px 32px rgba(0,0,0,0.15)',
+            fontFamily: 'Georgia, Baskerville, "Times New Roman", Times, serif',
             minWidth: '200px',
             zIndex: 1000
           }}>
             <div style={{
               padding: '0.75rem 1rem',
-              borderBottom: '1px solid #e2e8f0'
+              borderBottom: '1px solid #e5ddd0'
             }}>
-              <div style={{ fontSize: '14px', fontWeight: '500', color: '#2d3748' }}>
+              <div style={{ fontSize: '14px', fontWeight: '400', color: '#5d4e37' }}>
                 {user.displayName}
               </div>
-              <div style={{ fontSize: '12px', color: '#718096' }}>
+              <div style={{ fontSize: '12px', color: '#8b7355', fontStyle: 'italic' }}>
                 {user.email}
               </div>
             </div>
@@ -149,9 +153,10 @@ const UserProfile = () => {
                 fontSize: '14px',
                 color: '#e53e3e',
                 textAlign: 'left',
-                borderRadius: '0 0 6px 6px'
+                borderRadius: '0 0 12px 12px',
+                fontFamily: 'inherit'
               }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#fed7d7'}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#fef2f2'}
               onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
             >
               Sign out
