@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { useAuth } from './AuthContext'
 import Login from './Login'
+import GardenSelector from './components/GardenSelector'
 
 function App() {
   const [serverMessage, setServerMessage] = useState('')
   const [health, setHealth] = useState(null)
+  const [selectedGarden, setSelectedGarden] = useState(null)
   const { user } = useAuth()
 
   useEffect(() => {
@@ -44,6 +46,10 @@ function App() {
           </div>
         )}
       </div>
+      <GardenSelector 
+        selectedGarden={selectedGarden} 
+        onGardenChange={setSelectedGarden} 
+      />
     </div>
   )
 }
